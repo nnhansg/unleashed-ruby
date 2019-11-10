@@ -4,7 +4,7 @@ require 'unleashed/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'unleashed'
-  spec.version       = Unleashed::VERSION
+  spec.version       = Unleashed::Version::STRING
   spec.authors       = ['Nhan Nguyen']
   spec.email         = ['nnhansg@gmail.com']
 
@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/nnhansg/unleashed-ruby/src/master/'
   spec.metadata['changelog_uri'] = 'https://github.com/nnhansg/unleashed-ruby/src/master/CHANGELOG.md'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/nnhansg/unleashed-ruby/issues'
 
   spec.required_ruby_version = '>= 2.5.0'
-  spec.requirements << 'rails >= 5.1.6'
   spec.requirements << 'ruby >= 2.5.0'
 
   # Specify which files should be added to the gem when it is released.

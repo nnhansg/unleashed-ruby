@@ -1,3 +1,9 @@
 module Unleashed
-  VERSION = '0.1.0'.freeze
+  module Version
+    MAJOR = 0
+    MINOR = 1
+    TINY = 2
+
+    STRING = "#{MAJOR}.#{MINOR}.#{TINY}".freeze
+  end
 end
