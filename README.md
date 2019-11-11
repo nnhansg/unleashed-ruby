@@ -67,6 +67,19 @@ client.customers.all
 ```ruby
 client.customers.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
 ```
+### Invoices
+
+#### Get all invoices
+
+```ruby
+client.invoices.all
+```
+
+#### Get a invoice
+
+```ruby
+client.invoices.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
+```
 
 ## 4. Contributing
 
