@@ -2,8 +2,10 @@ require_relative 'configurable'
 require_relative 'error'
 require_relative 'models/base_model'
 require_relative 'models/customer'
+require_relative 'models/invoice'
 require_relative 'resources/base_resource'
 require_relative 'resources/customer_resource'
+require_relative 'resources/invoice_resource'
 require 'json'
 require 'faraday'
 
@@ -128,7 +130,8 @@ module Unleashed
     # @return [Hash]
     def self.resources
       {
-        customers: CustomerResource
+        customers: CustomerResource,
+        invoices: InvoiceResource
       }
     end
 
