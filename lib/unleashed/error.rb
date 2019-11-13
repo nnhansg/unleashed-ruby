@@ -42,7 +42,7 @@ module Unleashed
       else
         json_response = JSON.parse(@response.body)
         message = ''
-        message << json_response['message'] if json_response.key?('message')
+        message << json_response['description'] if json_response.key?('description')
 
         if json_response.key?('errors')
           message << json_response['errors'].map { |attribute, content| "#{attribute}: #{content}" }.join(', ')
