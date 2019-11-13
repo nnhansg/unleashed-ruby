@@ -24,7 +24,7 @@ Before interacting with Unleashed API you need to sign up an account.
 
 See [Unleashed API Documentation](https://apidocs.unleashedsoftware.com/) for more information.
 
-### Create a Unleashed client
+### Setup environment variables
 
 The client can be configured through environment variables.
 
@@ -45,9 +45,17 @@ The following parameters are configurable through the client:
 * `:api_key` / `ENV['UNLEASHED_API_KEY']`: API KEY
 * `:client_type_header` / `ENV['UNLEASHED_CLIENT_TYPE_HEADER']`: Client Type Header to use (default: 'API-Sandbox')
 
+### Setup default Unleashed client from environment variables
+
+Add file `unleashed.rb` to `config/initializers`
+
+```ruby
+Unleashed.setup
+```
+
 ## 3. Usage
 
-### Instantiate the Unleashed client
+### Instantiate the Unleashed client manually
 
 ```ruby
 options = { api_id: ENV['UNLEASHED_API_ID'], api_key: ENV['UNLEASHED_API_KEY'] }
@@ -67,6 +75,19 @@ client.customers.all
 ```ruby
 client.customers.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
 ```
+
+#### Get the first customer
+
+```ruby
+client.customers.first
+```
+
+#### Get the last customer
+
+```ruby
+client.customers.last
+```
+
 ### Invoices
 
 #### Get all invoices
@@ -75,7 +96,7 @@ client.customers.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
 client.invoices.all
 ```
 
-#### Get a invoice
+#### Get an invoice
 
 ```ruby
 client.invoices.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')

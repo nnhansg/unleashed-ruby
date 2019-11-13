@@ -3,6 +3,7 @@ module Unleashed
   module Configurable
     attr_accessor :api_domain, :api_id, :api_key, :client_type_header, :errors_format
 
+    # Class Configurable
     class << self
       # List of configurable keys for {Unleashed::Client}.
       #

@@ -34,5 +34,19 @@ module Unleashed
       response = JSON.parse(@client.get("Customers/#{id}").body)
       Unleashed::Customer.new(@client, response)
     end
+
+    # Get a first customer in all
+    #
+    # @return [Unleashed::Customer]
+    def first
+      all.first
+    end
+
+    # Get a last customer in all
+    #
+    # @return [Unleashed::Customer]
+    def last
+      all.last
+    end
   end
 end

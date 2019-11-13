@@ -71,60 +71,6 @@ module Unleashed
       response
     end
 
-    # # Make a HTTP POST request
-    # #
-    # # @param url [String] The path, relative to {#api_endpoint}
-    # # @param parameters [Hash] Query params for request
-    # # @return [Faraday::Response]
-    # def post(url, parameters = {})
-    #   response = connection.post do |req|
-    #     req.url "#{api_endpoint}#{url}"
-    #     req.headers['Content-Type'] = 'application/json'
-    #     req.body = parameters.to_json
-    #   end
-    #   on_complete(response)
-    #   response
-    # end
-
-    # # Make a HTTP PATCH request
-    # #
-    # # @param url [String] The path, relative to {#api_endpoint}
-    # # @param parameters [Hash] Query params for request
-    # # @return [Faraday::Response]
-    # def patch(url, parameters = {})
-    #   response = connection.patch do |req|
-    #     req.url "#{api_endpoint}#{url}"
-    #     req.headers['Content-Type'] = 'application/json'
-    #     req.body = parameters.to_json
-    #   end
-    #   on_complete(response)
-    #   response
-    # end
-
-    # # Make a HTTP DELETE request
-    # #
-    # # @param url [String] The path, relative to {#api_endpoint}
-    # # @param parameters [Hash] Query params for request
-    # # @return [Faraday::Response]
-    # def delete(url, parameters = {})
-    #   response = connection.delete do |req|
-    #     req.url "#{api_endpoint}#{url}"
-    #     req.headers['Content-Type'] = 'application/json'
-    #     req.body = parameters.to_json
-    #   end
-    #   on_complete(response)
-    #   response
-    # end
-
-    # Show details of your Platform.
-    #
-    # @see https://reference.Unleashed.com/#show-marketplace
-    #
-    # @return [Hash]
-    def marketplace
-      JSON.parse(get('marketplace').body)['marketplaces']
-    end
-
     # Available resources for {Client}
     #
     # @return [Hash]
