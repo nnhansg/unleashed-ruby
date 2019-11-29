@@ -2,7 +2,7 @@ module Unleashed
   module Version
     MAJOR = 0
     MINOR = 1
-    TINY = 8
+    TINY = 9
 
     STRING = "#{MAJOR}.#{MINOR}.#{TINY}".freeze
   end

@@ -1,6 +1,8 @@
 module Unleashed
   # Base model for all the other models to inherit from
   class BaseModel
+    attr_reader :attributes
+
     def initialize(client, attributes = {})
       @client = client
       @attributes = stringify_keys(attributes)
