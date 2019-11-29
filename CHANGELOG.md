@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.9] - 2019-11-29
+
+- Add `attr_reader` attributes applying for all models.
+- Update configuration of dependencies.
+- Add first, last methods for `invoice` model.
+
+## [0.1.7] - 2019-11-13
+
+- Show messages when having any error.
+
+## [0.1.6] - 2019-11-13
+
+- Add some methods to `Customer`
+- Update readme.
+
+## [0.1.5] - 2019-11-11
+
+- Some small updates.
+
 ## [0.1.4] - 2019-11-11
 
 - Add `Customer` resource
