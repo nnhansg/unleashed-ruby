@@ -102,6 +102,18 @@ client.invoices.all
 client.invoices.find('XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX')
 ```
 
+#### Get the first invoice
+
+```ruby
+client.invoices.first
+```
+
+#### Get the last invoice
+
+```ruby
+client.invoices.last
+```
+
 ## 4. Contributing
 
   1. Fork it [https://github.com/nnhansg/unleashed-ruby](https://github.com/nnhansg/unleashed-ruby)

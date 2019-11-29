@@ -1,7 +1,7 @@
 module Unleashed
   # Resource for the Invoices API
   # The Invoices resource allows sales invoices to be listed and viewed.
-  # An individual sales invoice details can be viewed by appending its identifier 
+  # An individual sales invoice details can be viewed by appending its identifier
   # (a GUID formatted as XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX) to the URI.
   #
   # @see https://apidocs.unleashedsoftware.com/Invoices
@@ -34,6 +34,19 @@ module Unleashed
       response = JSON.parse(@client.get("Invoices/#{id}").body)
       Unleashed::Invoice.new(@client, response)
     end
+
+    # Get a first invoice in all
+    #
+    # @return [Unleashed::Invoice]
+    def first
+      all.first
+    end
+
+    # Get a last invoice in all
+    #
+    # @return [Unleashed::Invoice]
+    def last
+      all.last
+    end
   end
 end
-  
