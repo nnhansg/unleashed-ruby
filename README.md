@@ -64,6 +64,126 @@ client = Unleashed::Client.new(options)
 
 ### Customers
 
+#### Create a new Customer
+
+```ruby
+customer = client.customers.create(
+  Guid: '59f21e05-07fe-4d9d-b460-a09db4c3caa9',
+  Addresses: [
+    {
+      AddressType: 'Shipping',
+      AddressName: 'Example Address',
+      StreetAddress: 'Example Address',
+      StreetAddress2: 'Example Address 2',
+      Suburb: 'Example Suburb',
+      City: 'Auckland',
+      Region: 'Auckland',
+      Country: 'New Zealand',
+      PostalCode: '1061',
+      IsDefault: false,
+      DeliveryInstruction: 'Have a good day'
+    }
+  ],
+  TaxCode: '',
+  TaxRate: nil,
+  CustomerCode: 'UnleashedCustomer',
+  CustomerName: 'Unleashed Customer',
+  GSTVATNumber: nil,
+  BankName: nil,
+  BankBranch: nil,
+  BankAccount: nil,
+  Website: nil,
+  PhoneNumber: nil,
+  FaxNumber: nil,
+  MobileNumber: nil,
+  DDINumber: nil,
+  TollFreeNumber: nil,
+  Email: nil,
+  EmailCC: nil,
+  Currency: {
+    CurrencyCode: 'NZD',
+    Description: 'New Zealand, Dollars',
+    Guid: 'c33e4f50-e42b-40cd-9147-4d0e4657cd4d'
+  },
+  Notes: nil,
+  Taxable: true,
+  SalesPerson: nil,
+  DiscountRate: 0.0000,
+  PrintPackingSlipInsteadOfInvoice: false,
+  PrintInvoice: false,
+  StopCredit: false,
+  Obsolete: false,
+  XeroSalesAccount: nil,
+  XeroCostOfGoodsAccount: nil,
+  SellPriceTier: '',
+  SellPriceTierReference: nil,
+  CustomerType: 'Cash',
+  PaymentTerm: '20th Month following',
+  ContactFirstName: nil,
+  ContactLastName: nil
+)
+```
+
+#### Update a Customer
+
+```ruby
+customer = client.customers.update(
+  Guid: '59f21e05-07fe-4d9d-b460-a09db4c3caa9',
+  Addresses: [
+    {
+      AddressType: 'Shipping',
+      AddressName: 'Example Address',
+      StreetAddress: 'Example Address',
+      StreetAddress2: 'Example Address 2',
+      Suburb: 'Example Suburb',
+      City: 'Auckland',
+      Region: 'Auckland',
+      Country: 'New Zealand',
+      PostalCode: '1061',
+      IsDefault: false,
+      DeliveryInstruction: 'Have a good day'
+    }
+  ],
+  TaxCode: '',
+  TaxRate: nil,
+  CustomerCode: 'UnleashedCustomer',
+  CustomerName: 'Unleashed Customer',
+  GSTVATNumber: nil,
+  BankName: nil,
+  BankBranch: nil,
+  BankAccount: nil,
+  Website: nil,
+  PhoneNumber: nil,
+  FaxNumber: nil,
+  MobileNumber: nil,
+  DDINumber: nil,
+  TollFreeNumber: nil,
+  Email: nil,
+  EmailCC: nil,
+  Currency: {
+    CurrencyCode: 'NZD',
+    Description: 'New Zealand, Dollars',
+    Guid: '6cb5d67a-1c96-4fa8-bf59-b23c2d69f22a'
+  },
+  Notes: nil,
+  Taxable: true,
+  SalesPerson: nil,
+  DiscountRate: 0.0000,
+  PrintPackingSlipInsteadOfInvoice: false,
+  PrintInvoice: false,
+  StopCredit: false,
+  Obsolete: false,
+  XeroSalesAccount: nil,
+  XeroCostOfGoodsAccount: nil,
+  SellPriceTier: '',
+  SellPriceTierReference: nil,
+  CustomerType: 'Cash',
+  PaymentTerm: '20th Month following',
+  ContactFirstName: nil,
+  ContactLastName: nil
+)
+```
+
 #### Get all customers
 
 ```ruby

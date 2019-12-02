@@ -10,6 +10,16 @@ require 'json'
 require 'faraday'
 
 module Unleashed
+  class CustomParamsEncoder
+    def self.encode(params)
+      Faraday::NestedParamsEncoder.encode(params).gsub(/\+/, '%20')
+    end
+
+    def self.decode(query)
+      Faraday::NestedParamsEncoder.decode(query)
+    end
+  end
+
   # Client for the Unleashed API
   #
   # @see https://apidocs.unleashedsoftware.com
@@ -29,7 +39,7 @@ module Unleashed
     #
     # @return [Faraday::Connection]
     def connection
-      Faraday.new(url: @api_endpoint) do |faraday|
+      Faraday.new(url: @api_endpoint, request: { params_encoder: CustomParamsEncoder }) do |faraday|
         faraday.adapter :net_http
       end
     end
@@ -65,6 +75,30 @@ module Unleashed
         headers.each do |key, value|
           request.headers[key] = value
         end
+      end
+
+      on_complete(response) unless skip_status_check
+      response
+    end
+
+    # Make a HTTP POST request
+    #
+    # @param url [String] The path, relative to {#api_endpoint}
+    # @param parameters [Hash] Query params for request
+    # @return [Faraday::Response]
+    def post(url, parameters = {}, headers = {}, skip_status_check = false)
+      response = connection.post do |request|
+        request.url "#{api_endpoint}#{url}"
+
+        # Set headers
+        init_default_headers(request)
+
+        # Assign more custom headers
+        headers.each do |key, value|
+          request.headers[key] = value
+        end
+
+        request.body = parameters.to_json
       end
 
       on_complete(response) unless skip_status_check

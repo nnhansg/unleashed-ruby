@@ -48,5 +48,16 @@ module Unleashed
     def last
       all.last
     end
+
+    # Create a new customer for a marketplace
+    #
+    # @param attributes [Hash] Customer's attributes.
+    #
+    # @return [Unleashed::Customer]
+    def create(attributes)
+      id = attributes[:Guid].present? ? attributes[:Guid] : ''
+      response = JSON.parse(@client.post("Customers/#{id}", attributes).body)
+      Unleashed::Customer.new(@client, response)
+    end
   end
 end
