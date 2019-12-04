@@ -1,5 +1,14 @@
 # Unleashed
 
+[![Join the chat at https://gitter.im/unleashed-ruby/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/unleashed-ruby/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+[![Gem Version](https://badge.fury.io/rb/unleashed.svg)](https://badge.fury.io/rb/unleashed)
+[![Build Status](https://travis-ci.org/nnhansg/unleashed-ruby.svg?branch=master)](https://travis-ci.org/nnhansg/unleashed-ruby)
+[![Coverage Status](https://coveralls.io/repos/github/nnhansg/unleashed-ruby/badge.svg)](https://coveralls.io/github/nnhansg/unleashed-ruby)
+[![Code Climate](https://codeclimate.com/github/nnhansg/unleashed-ruby/badges/gpa.svg)](https://codeclimate.com/github/nnhansg/unleashed-ruby)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e41f32cc2a422dcecbf7/maintainability)](https://codeclimate.com/github/nnhansg/unleashed-ruby/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e41f32cc2a422dcecbf7/test_coverage)](https://codeclimate.com/github/nnhansg/unleashed-ruby/test_coverage)
+
 Ruby gem for invoking Unleashedsoftware RESTful API [https://apidocs.unleashedsoftware.com](https://apidocs.unleashedsoftware.com)
 
 ## 1. Installation
@@ -232,6 +241,46 @@ client.invoices.first
 
 ```ruby
 client.invoices.last
+```
+
+### Currencies
+
+#### Get all currencies
+
+```ruby
+client.currencies.all
+```
+
+#### Get the first currency
+
+```ruby
+client.currencies.first
+```
+
+#### Get the last currency
+
+```ruby
+client.currencies.last
+```
+
+### Payment Terms
+
+#### Get all payment terms
+
+```ruby
+client.payment_terms.all
+```
+
+#### Get the first payment term
+
+```ruby
+client.payment_terms.first
+```
+
+#### Get the last payment term
+
+```ruby
+client.payment_terms.last
 ```
 
 ## 4. Contributing

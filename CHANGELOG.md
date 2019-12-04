@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.11] - 2019-12-04
+
+- Add `Payment Term`
+- Update `Currency`
+- Update README.md and CHANGELOG.md
+
+## [0.1.10] - 2019-12-02
+
+- Add creating `customer`.
+- Add new model `Currency`
+- Custom encoding of `Faraday`.
+
 ## [0.1.9] - 2019-11-29
 
 - Add `attr_reader` attributes applying for all models.
