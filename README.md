@@ -5,7 +5,6 @@
 [![Gem Version](https://badge.fury.io/rb/unleashed.svg)](https://badge.fury.io/rb/unleashed)
 [![Build Status](https://travis-ci.org/nnhansg/unleashed-ruby.svg?branch=master)](https://travis-ci.org/nnhansg/unleashed-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/nnhansg/unleashed-ruby/badge.svg)](https://coveralls.io/github/nnhansg/unleashed-ruby)
-[![Code Climate](https://codeclimate.com/github/nnhansg/unleashed-ruby/badges/gpa.svg)](https://codeclimate.com/github/nnhansg/unleashed-ruby)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e41f32cc2a422dcecbf7/maintainability)](https://codeclimate.com/github/nnhansg/unleashed-ruby/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e41f32cc2a422dcecbf7/test_coverage)](https://codeclimate.com/github/nnhansg/unleashed-ruby/test_coverage)
 
