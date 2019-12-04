@@ -49,7 +49,7 @@ module Unleashed
       all.last
     end
 
-    # Create a new customer for a marketplace
+    # Create a new customer
     #
     # @param attributes [Hash] Customer's attributes.
     #
