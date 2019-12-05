@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.12] - 2019-12-05
+
+- Update some cases to show errors.
+
 ## [0.1.11] - 2019-12-04
 
 - Add `Payment Term`
