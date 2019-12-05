@@ -45,8 +45,8 @@ module Unleashed
         message << json_response['description'] if json_response.key?('description')
         message << json_response['Description'] if json_response.key?('Description')
 
-        if json_response.key?('errors')
-          message << json_response['errors'].map { |attribute, content| "#{attribute}: #{content}" }.join(', ')
+        if json_response.key?('Items') && json_response['Items'].is_a?(Array)
+          message << json_response['Items'].map { |attribute, content| "#{attribute}: #{content}" }.join(', ')
         end
 
         message
