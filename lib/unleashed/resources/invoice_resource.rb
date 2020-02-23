@@ -63,14 +63,15 @@ module Unleashed
     #                     Guid: "5cc41e1e-468f-4c01-beb9-a077fc06df46", LastModifiedOn: "/Date(1565058268764)/" } ] }
     def all(options = { Page: 1, PageSize: 200 })
       endpoint = 'Invoices'
+      params = options.dup
 
       # Handle Page option
-      if options[:Page].present?
-        endpoint << "/#{options[:Page]}"
-        options.delete :Page
+      if params[:Page].present?
+        endpoint << "/#{params[:Page]}"
+        params.delete :Page
       end
 
-      response = JSON.parse(@client.get(endpoint, options).body)
+      response = JSON.parse(@client.get(endpoint, params).body)
       invoices = response.key?('Items') ? response['Items'] : []
       invoices.map { |attributes| Unleashed::Invoice.new(@client, attributes) }
     end

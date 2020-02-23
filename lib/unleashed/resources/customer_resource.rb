@@ -32,14 +32,15 @@ module Unleashed
     # @return [Array<Unleashed::Customer>] List all customers.
     def all(options = { Page: 1, PageSize: 200 })
       endpoint = 'Customers'
+      params = options.dup
 
       # Handle Page option
-      if options[:Page].present?
-        endpoint << "/#{options[:Page]}"
-        options.delete :Page
+      if params[:Page].present?
+        endpoint << "/#{params[:Page]}"
+        params.delete :Page
       end
 
-      response = JSON.parse(@client.get(endpoint, options).body)
+      response = JSON.parse(@client.get(endpoint, params).body)
       customers = response.key?('Items') ? response['Items'] : []
       customers.map { |attributes| Unleashed::Customer.new(@client, attributes) }
     end
