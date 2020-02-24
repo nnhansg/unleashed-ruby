@@ -75,7 +75,7 @@ client = Unleashed::Client.new(options)
 #### Create a new Customer
 
 ```ruby
-customer = client.customers.create(
+customer = client.customers.create_or_update(
   Guid: '59f21e05-07fe-4d9d-b460-a09db4c3caa9',
   Addresses: [
     {

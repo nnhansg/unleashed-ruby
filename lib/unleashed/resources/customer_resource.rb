@@ -90,7 +90,7 @@ module Unleashed
     #     PaymentTerm: "20th Month following", ContactFirstName: nil, ContactLastName: nil }
     #
     # @return [Unleashed::Customer]
-    def create(attributes)
+    def create_or_update(attributes)
       id = attributes[:Guid].present? ? attributes[:Guid] : ''
       endpoint = "Customers/#{id}"
       response = JSON.parse(@client.post(endpoint, attributes).body)
