@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [0.1.14] - 2020-02-23
 
-Update options, queries, comments of `currencies`, `customers`, `invoices`, `payment terms`.
+- Update options, queries, comments of `currencies`, `customers`, `invoices`, `payment terms`.
+- Replace `create` method by `create_or_update` of `customers`
 
 ## [0.1.13] - 2019-12-05
 
