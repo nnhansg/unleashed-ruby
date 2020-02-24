@@ -11,11 +11,7 @@ module Unleashed
     # List all payment_terms
     # /PaymentTerms - also returns the first 200 payment_terms because page number 1 is the default.
     #
-    # @param options [Hash] Optional options.
-    # @option options [Integer] :PageSize Can ask for up to 200 payment_terms. Default: 200
-    # @option options [Integer] :Page Page index. Default: 1
-    #
-    # @return [Array<Unleashed::PaymentTerm>] List all payment_terms.
+    # @return [Array<Unleashed::PaymentTerm>] List all payment terms.
     # {
     #   "Items": [
     #     {
