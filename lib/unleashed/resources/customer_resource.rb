@@ -92,7 +92,8 @@ module Unleashed
     # @return [Unleashed::Customer]
     def create_or_update(attributes)
       id = attributes[:Guid].present? ? attributes[:Guid] : ''
-      endpoint = "Customers/#{id}"
+      endpoint = 'Customers'
+      endpoint << "/#{id}" if id.present?
       response = JSON.parse(@client.post(endpoint, attributes).body)
       Unleashed::Customer.new(@client, response)
     end
