@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.14] - 2020-02-23
+
+Update options, queries, comments of `currencies`, `customers`, `invoices`, `payment terms`.
+
 ## [0.1.13] - 2019-12-05
 
 - Update version.

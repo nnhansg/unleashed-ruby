@@ -195,6 +195,26 @@ customer = client.customers.update(
 #### Get all customers
 
 ```ruby
+# List all customers
+# /Customers - also returns the first 200 customers because page number 1 is the default.
+#
+# @param options [Hash] Optional options.
+# @option PageSize: Can ask for up to 200 customers. Default: 200
+# @option Page: Page index. Default: 1
+# @option CustomerType: Only returns customers that matches the specified customer type.
+# @option SellPriceTier: Only returns customers that are assigned to the specified sell price tier.
+# @option Currency: Only returns customers with currency code exactly matching the specified value.
+# @option Customer: Returns customers whose customer code or customer name contains the specified value. It is case-sensitive.
+# @option CustomerCode: Only returns customers that start with the specific customer code.
+# @option CustomerName: Only returns customers that start with the specific customer name.
+# @option ContactEmail: Only returns customers that have a contact email that starts with the specified email address.
+# @option ModifiedSince: Only returns customers modified since a specified date.
+# @option IncludeObsolete: Returns all customers, including obsolete, if set to `true`. If set to `false` or if it is not specified then returns only active (ie. non-obsolete) customers.
+# @option XeroContactId: Only returns customers that start with the specific Xero Contact Id.
+# @option OrderBy: Orders the list by `LastModifiedOn` or `CreatedOn` date. By default the list is ordered by `CustomerCode`.
+# @option Sort: Orders the list by `CreatedOn` date sorted in ascending or descending order.
+#
+# @return [Array<Unleashed::Customer>] List all customers.
 client.customers.all
 ```
 
@@ -221,6 +241,22 @@ client.customers.last
 #### Get all invoices
 
 ```ruby
+# List all invoices
+# /Invoices - also returns the first 200 invoices because page number 1 is the default.
+#
+# @param options [Hash] Optional options.
+# @option Page: Page index. Default: 1
+# @option PageSize: Specifies the page size for pagination. Default page size is 200 invoices.
+# @option CustomerCode: Returns invoices that matches the specific customer code.
+# @option StartDate: Returns invoices created after a specified date, must be UTC format.
+# @option EndDate: Returns invoices created before a specified date, must be UTC format.
+# @option ModifiedSince: Returns invoices created or edited after a specified date, must be UTC format.
+# @option OrderNumber: Returns the invoices associated with the Sales Order Number.
+# @option InvoiceNumber: Returns a single invoice with the specified invoice number. If set, it overrides all other filters.
+# @option InvoiceStatus: Returns invoices with the specified status. Multiple selection can be specified as comma separated.For example: `invoiceStatus=Completed,Parked`. If no invoiceStatus filter is specified, then we exclude “Deleted” by default.
+# @option SerialBatch: False by default. If set to true then the attributes SerialNumbers and BatchNumbers are displayed.
+#
+# @return [Array<Unleashed::Invoice>] List all invoices.
 client.invoices.all
 ```
 
