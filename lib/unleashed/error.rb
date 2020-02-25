@@ -41,7 +41,7 @@ module Unleashed
         @response.body
       else
         json_response = JSON.parse(@response.body)
-        message = ''
+        message = "[StatusCode=#{@response.status}] - "
         message << json_response['description'] if json_response.key?('description')
         message << json_response['Description'] if json_response.key?('Description')
 
