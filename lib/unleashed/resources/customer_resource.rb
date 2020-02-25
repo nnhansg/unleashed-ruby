@@ -37,7 +37,6 @@ module Unleashed
       # Handle Page option
       if params[:Page].present?
         endpoint << "/#{params[:Page]}"
-        params.delete :Page
       end
 
       response = JSON.parse(@client.get(endpoint, params).body)
@@ -48,11 +47,11 @@ module Unleashed
     # Get a single customer
     # /Customers/E6E8163F-6911-40e9-B740-90E5A0A3A996 - returns details of a particular customer.
     #
-    # @param id [String] customer ID.
+    # @param guid [String] customer ID.
     #
     # @return [Unleashed::Customer]
-    def find(id)
-      endpoint = "Customers/#{id}"
+    def find(guid)
+      endpoint = "Customers/#{guid}"
       response = JSON.parse(@client.get(endpoint).body)
       Unleashed::Customer.new(@client, response)
     end

@@ -60,6 +60,7 @@ module Unleashed
       request.headers['Content-Type'] = 'application/json'
       request.headers['api-auth-id'] = @api_id
       request.headers['api-auth-signature'] = signature(request.params.to_query)
+      request
     end
 
     # Make a HTTP GET request
@@ -73,12 +74,18 @@ module Unleashed
         request.params = parameters
 
         # Set headers
-        init_default_headers(request)
+        request = init_default_headers(request)
 
         # Assign more custom headers
         headers.each do |key, value|
           request.headers[key] = value
         end
+
+        # Print log
+        time = Time.zone.now.strftime('%Y-%m-%d %H:%M:%S %z')
+        puts "[#{time}] Client -- : HEADERS #{request.headers}"
+        puts "[#{time}] Client -- : GET #{request.path}"
+        puts "[#{time}] Client -- : PARAMS #{request.params}"
       end
 
       on_complete(response) unless skip_status_check
@@ -103,6 +110,13 @@ module Unleashed
         end
 
         request.body = parameters.to_json
+
+        # Print log
+        time = Time.zone.now.strftime('%Y-%m-%d %H:%M:%S %z')
+        puts "[#{time}] Client -- : HEADERS #{request.headers}"
+        puts "[#{time}] Client -- : POST #{request.path}"
+        puts "[#{time}] Client -- : PARAMS #{request.params}"
+        puts "[#{time}] Client -- : BODY #{request.body}"
       end
 
       on_complete(response) unless skip_status_check

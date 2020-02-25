@@ -13,7 +13,7 @@ module Unleashed
     # @return [Array<Unleashed::Currency>] List all currencies.
     def all
       endpoint = 'Currencies'
-      response = JSON.parse(@client.get(endpoint, options).body)
+      response = JSON.parse(@client.get(endpoint).body)
       currencies = response.key?('Items') ? response['Items'] : []
       currencies.map { |attributes| Unleashed::Currency.new(@client, attributes) }
     end

@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.15] - 2020-02-26
+
+- Update and fix bugs for `client`, `currency`, `customer`, `invoice` resources.
+
 ## [0.1.14] - 2020-02-23
 
 - Update options, queries, comments of `currencies`, `customers`, `invoices`, `payment terms`.
-- Replace `create` method by `create_or_update` method of `customers`
+- Replace `create` method by `create_or_update` method of `customers`.
 
 ## [0.1.13] - 2019-12-05
 

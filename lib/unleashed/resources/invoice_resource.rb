@@ -68,7 +68,6 @@ module Unleashed
       # Handle Page option
       if params[:Page].present?
         endpoint << "/#{params[:Page]}"
-        params.delete :Page
       end
 
       response = JSON.parse(@client.get(endpoint, params).body)
