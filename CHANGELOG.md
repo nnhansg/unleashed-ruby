@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [0.1.15] - 2020-02-26
 
 - Update and fix bugs for `client`, `currency`, `customer`, `invoice` resources.
+- Show status code in error messge.
+- Print request info to debug easier.
 
 ## [0.1.14] - 2020-02-23
 
