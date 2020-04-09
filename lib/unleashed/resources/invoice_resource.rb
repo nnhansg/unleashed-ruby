@@ -66,10 +66,7 @@ module Unleashed
       params = options.dup
 
       # Handle Page option
-      if params[:Page].present?
-        endpoint << "/#{params[:Page]}"
-      end
-
+      endpoint << "/#{params[:Page]}" if params[:Page].present?
       response = JSON.parse(@client.get(endpoint, params).body)
       invoices = response.key?('Items') ? response['Items'] : []
       invoices.map { |attributes| Unleashed::Invoice.new(@client, attributes) }

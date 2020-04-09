@@ -5,11 +5,13 @@ require_relative 'models/customer'
 require_relative 'models/invoice'
 require_relative 'models/currency'
 require_relative 'models/payment_term'
+require_relative 'models/company'
 require_relative 'resources/base_resource'
 require_relative 'resources/customer_resource'
 require_relative 'resources/invoice_resource'
 require_relative 'resources/currency_resource'
 require_relative 'resources/payment_term_resource'
+require_relative 'resources/company_resource'
 require 'json'
 require 'faraday'
 
@@ -131,7 +133,8 @@ module Unleashed
         customers: CustomerResource,
         invoices: InvoiceResource,
         currencies: CurrencyResource,
-        payment_terms: PaymentTermResource
+        payment_terms: PaymentTermResource,
+        companies: CompanyResource
       }
     end
 

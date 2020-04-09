@@ -35,10 +35,7 @@ module Unleashed
       params = options.dup
 
       # Handle Page option
-      if params[:Page].present?
-        endpoint << "/#{params[:Page]}"
-      end
-
+      endpoint << "/#{params[:Page]}" if params[:Page].present?
       response = JSON.parse(@client.get(endpoint, params).body)
       customers = response.key?('Items') ? response['Items'] : []
       customers.map { |attributes| Unleashed::Customer.new(@client, attributes) }

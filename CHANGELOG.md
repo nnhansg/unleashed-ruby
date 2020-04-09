@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.16] - 2020-04-10
+
+- Add new model `Company` and resources.
+- Update README and separate it to some docs.
+
 ## [0.1.15] - 2020-02-26
 
 - Update and fix bugs for `client`, `currency`, `customer`, `invoice` resources.
