@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.17] - 2021-01-14
+
+- Update HMAC input.
+
 ## [0.1.16] - 2020-04-10
 
 - Add new model `Company` and resources.
