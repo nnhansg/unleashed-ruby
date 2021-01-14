@@ -50,6 +50,16 @@ module Unleashed
       end
     end
 
+    def hmac_input(params_hash)
+      hmac_input_a = []
+
+      params_hash.each do |k, v|
+        hmac_input_a << "#{k}=#{v}"
+      end
+
+      hmac_input_a.join('&')
+    end
+
     # Create a signature for request
     def signature(params = '')
       hash = OpenSSL::HMAC.digest('sha256', @api_key, params)
@@ -61,7 +71,7 @@ module Unleashed
       request.headers['Accept'] = 'application/json'
       request.headers['Content-Type'] = 'application/json'
       request.headers['api-auth-id'] = @api_id
-      request.headers['api-auth-signature'] = signature(request.params.to_query)
+      request.headers['api-auth-signature'] = signature(hmac_input(request.params))
       request
     end
 
