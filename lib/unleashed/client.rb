@@ -83,7 +83,7 @@ module Unleashed
     def get(url, parameters = {}, headers = {}, skip_status_check = false)
       response = connection.get do |request|
         request.url "#{api_endpoint}#{url}"
-        request.params = parameters
+        request.params = parameters.sort.to_h
 
         # Set headers
         request = init_default_headers(request)

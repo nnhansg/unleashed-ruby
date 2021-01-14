@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.18] - 2021-01-15
+
+- Sort request params to generate correct signature.
+
 ## [0.1.17] - 2021-01-14
 
 - Update HMAC input.
